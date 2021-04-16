@@ -43,7 +43,6 @@ exports.deleteProductoById = (req,res)=>{
 }
 
 exports.editProductoById = (req,res)=>{
-    console.log(req.body)
     const  producto = {
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
@@ -53,6 +52,22 @@ exports.editProductoById = (req,res)=>{
     Producto.edit( req.body._id, producto,function (err, msg) {
         if (err) console.log(err);
         res.json({producto})
+        
+    });
+}
+
+exports.totalProductos = (req,res)=>{
+    Producto.count( {},function (err, total) {
+        if (err) console.log(err);
+        res.json({total})
+        
+    });
+}
+
+exports.totalProductosBajoStock = (req,res)=>{
+    Producto.count( {cantidad:{$lt:20}},function (err, total) {
+        if (err) console.log(err);
+        res.json({total})
         
     });
 }

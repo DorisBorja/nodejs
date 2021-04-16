@@ -3,7 +3,7 @@ const mongoose = require('mongoose'),
 
 
 module.exports = function () {
-    mongoose.connect('mongodb://localhost:27017/controlInventario', {
+    mongoose.connect('mongodb+srv://muenala:kovi123maU@cluster0.toweq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true

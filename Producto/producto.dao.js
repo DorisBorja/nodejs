@@ -14,7 +14,6 @@ productoSchema.statics.get = function (valor,parametro, cb) {
     }else{
         this.find({parametro:valor}, cb)
     }
-    
 }
 
 productoSchema.statics.edit = function (id,producto, cb) {
@@ -24,7 +23,6 @@ productoSchema.statics.edit = function (id,producto, cb) {
 
 productoSchema.statics.delete = function (id, cb) {
     this.deleteOne({"_id":id},cb)
-    console.log("eliminado"+id)
 }
 
 
