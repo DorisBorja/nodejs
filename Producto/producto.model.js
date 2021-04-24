@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-
+//llamamos al esquema
 const Schema = mongoose.Schema;
-
+//establecemos un esquema
 const productosSchema = new Schema({
     nombre:{
         type:String,
@@ -19,7 +19,6 @@ const productosSchema = new Schema({
         type:Number,
         require: true
     }
-    
 })
 
 module.exports = productosSchema

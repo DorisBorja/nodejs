@@ -1,8 +1,10 @@
 
 const Producto = require('./producto.dao')
 
+//exportar una funcion para crear el producto
 exports.createProducto = (req,res,next)=>{
     console.log(req.body)
+    //obtenemos los datos del producto
     const  producto = {
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
@@ -10,15 +12,16 @@ exports.createProducto = (req,res,next)=>{
         cantidad: req.body.cantidad
         
     }
-    
+    //guarda el producto
     Producto.create(producto,(err, producto)=>{
         if (err) res.send(err);
         res.json({Producto:producto});
       })
 }
-
+//obtener un producto
 exports.getProducto = (req,res)=>{
     console.log(req.body)
+      //obtenemos los datos del producto
     Producto.get(req.body.valor, req.body.parametro,function (err, producto) {
         if (err) console.log(err);
         res.json({Producto:producto})
